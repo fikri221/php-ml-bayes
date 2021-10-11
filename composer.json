@@ -1,0 +1,8 @@
+{
+    "require": {
+        "php-ai/php-ml": "^0.4.1",
+        "twbs/bootstrap": "^4.6",
+        "components/jquery": "^3.5",
+        "rubix/ml": "^0.3.1"
+    }
+}
