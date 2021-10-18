@@ -6,6 +6,8 @@ use Phpml\Dataset\CsvDataset;
 use Phpml\Metric\Accuracy;
 use Phpml\Metric\ConfusionMatrix;
 use Phpml\CrossValidation\StratifiedRandomSplit;
+use Phpml\Dataset\Demo\IrisDataset;
+
 ?>
 
 <!-- Page Content -->
@@ -52,7 +54,7 @@ use Phpml\CrossValidation\StratifiedRandomSplit;
 if(isset($_POST['proses'])) {
   $algo = 'knn';
   
-  $dataset = new CsvDataset(dirname(__FILE__). '/datasets/kelulusan-mahasiswa.csv', 13, true); //(file, jml atribut, header?)
+  $dataset = new IrisDataset(); //(file, jml atribut, header?)
   //echo dirname(__FILE__). '/datasets/kelulusan-mahasiswa.csv';
   $row = 1;
   /*
