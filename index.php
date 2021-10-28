@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Contralab - Home</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Medilab - v4.6.0
-  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+<?php include("layouts/header.php") ?>
 
 <body>
 
@@ -50,12 +13,18 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="auth/register.php">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="#appointment" class="appointment-btn scrollto"><span>Login</span></a>
+            <?php
+            if (!isset($_SESSION['name'])) {
+                echo '<a href="auth/login.php" class="appointment-btn scrollto"><span>Login</span></a>';
+            } else {
+                echo '<a href="" class="appointment-btn scrollto"><span>' . $_SESSION['name'] . '</span></a>';
+            }
+            ?>
 
         </div>
     </header><!-- End Header -->
@@ -128,7 +97,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-syringe"></i></div>
                             <h4><a href="">Suntik</a></h4>
-                            <p>Suntik KB adalah kontrasepsi hormonal yang mengandung hormon progestogen (progestin). 
+                            <p>Suntik KB adalah kontrasepsi hormonal yang mengandung hormon progestogen (progestin).
                                 Hormon ini serupa dengan hormon alami wanita, yaitu progesteron, dan dapat menghentikan ovulasi.</p>
                         </div>
                     </div>
@@ -137,7 +106,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-pills"></i></div>
                             <h4><a href="">Pil</a></h4>
-                            <p>Pil KB adalah kelompok obat yang digunakan untuk mencegah kehamilan. 
+                            <p>Pil KB adalah kelompok obat yang digunakan untuk mencegah kehamilan.
                                 Ada dua jenis pil KB, yaitu pil KB kombinasi dan pil KB khusus progestin.</p>
                         </div>
                     </div>
@@ -146,8 +115,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="fab fa-yandex-international"></i></div>
                             <h4><a href="">IUD</a></h4>
-                            <p>IUD yang merupakan singkatan dari intrauterine device (alat kontrasepsi dalam rahim), 
-                                juga dikenal dengan sebutan kontrasepsi spiral. IUD bekerja dengan cara menghambat 
+                            <p>IUD yang merupakan singkatan dari intrauterine device (alat kontrasepsi dalam rahim),
+                                juga dikenal dengan sebutan kontrasepsi spiral. IUD bekerja dengan cara menghambat
                                 gerakan sperma menuju saluran rahim untuk mencegah pembuahan, sehingga tidak terjadi kehamilan.</p>
                         </div>
                     </div>
@@ -156,7 +125,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-download"></i></div>
                             <h4><a href="">Implan</a></h4>
-                            <p>KB Implan merupakan salah satu alat kontrasepsi yang berbentuk seperti tabung plastik elastis dan berukuran kecil menyerupai 
+                            <p>KB Implan merupakan salah satu alat kontrasepsi yang berbentuk seperti tabung plastik elastis dan berukuran kecil menyerupai
                                 batang korek api yang dimasukkan ke jaringan lemak pada lengan atas wanita.</p>
                         </div>
                     </div>
@@ -165,8 +134,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-space-shuttle"></i></div>
                             <h4><a href="">Kondom</a></h4>
-                            <p>Kondom merupakan alat penghalang fisik yang menghentikan sperma 
-                                memasuki vagina dan mencapai sel telur. Penggunaan kondom secara konsisten dan benar dapat mengurangi 
+                            <p>Kondom merupakan alat penghalang fisik yang menghentikan sperma
+                                memasuki vagina dan mencapai sel telur. Penggunaan kondom secara konsisten dan benar dapat mengurangi
                                 risiko penularan penyakit menular seksual seperti herpes genital dan sifilis.</p>
                         </div>
                     </div>
@@ -175,7 +144,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-cut"></i></div>
                             <h4><a href="">Vasektomi</a></h4>
-                            <p>Vasektomi adalah prosedur kontrasepsi pada pria yang dilakukan dengan cara memutus penyaluran sperma ke air mani. 
+                            <p>Vasektomi adalah prosedur kontrasepsi pada pria yang dilakukan dengan cara memutus penyaluran sperma ke air mani.
                                 Dengan demikian, air mani tidak akan mengandung sperma, sehingga kehamilan dapat dicegah.</p>
                         </div>
                     </div>
@@ -184,8 +153,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-ban"></i></div>
                             <h4><a href="">Tubektomi</a></h4>
-                            <p>Tubektomi adalah prosedur pemotongan atau penutupan tuba falopi atau saluran indung telur yang menghubungkan 
-                                ovarium ke rahim. Setelah tubektomi, sel-sel telur tidak akan bisa memasuki rahim sehingga tidak dapat 
+                            <p>Tubektomi adalah prosedur pemotongan atau penutupan tuba falopi atau saluran indung telur yang menghubungkan
+                                ovarium ke rahim. Setelah tubektomi, sel-sel telur tidak akan bisa memasuki rahim sehingga tidak dapat
                                 dibuahi. Prosedur ini juga akan menghalangi sperma ke tuba falopi.</p>
                         </div>
                     </div>
@@ -253,15 +222,8 @@
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/purecounter/purecounter.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <!-- Javascript files -->
+    <?php include("layouts/scripts.php") ?>
 
 </body>
 

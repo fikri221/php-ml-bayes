@@ -17,4 +17,9 @@ $databaseName = 'php-ml-bayes';
 $databaseUsername = 'root';
 $databasePassword = '';
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+$conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+// Check connection
+if ($conn === false) {
+	die("ERROR: Could not connect. " . mysqli_connect_error());
+}
