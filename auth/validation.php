@@ -42,8 +42,7 @@ if ($action == "register") {
             $_SESSION['id'] = $id;
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
-            $_SESSION['loggedin'] = true;
-            header('location: ../index.php');
+            header('location: ../ml-bayes.php');
         } else {
             echo "<script>alert('Gagal Login'); window.location ='login.php' </script>";
             session_destroy();
@@ -57,5 +56,5 @@ if ($action == "register") {
         session_start();
     }
     session_destroy();
-    echo "<script>alert('Logout Berhasil!'); window.location ='./index.php' </script>";
+    echo "<script>alert('Logout Berhasil!'); window.location ='../index.php' </script>";
 }
