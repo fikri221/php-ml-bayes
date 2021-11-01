@@ -1,13 +1,6 @@
 <?php
 require_once("config.php");
-
-if (!isset($_SESSION)) {
-    session_start();
-}
-if (empty($_SESSION['name'])) {
-    session_destroy();
-    header('Location: ./auth/login.php');
-}
+session_start();
 ?>
 
 <!DOCTYPE html>
